@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/studenti', "StudentController@index");
+Route::resource('studenti', "StudentController");
