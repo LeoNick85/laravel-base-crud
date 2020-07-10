@@ -3,7 +3,10 @@
 @section('page-title', "Studenti")
 
 @section('content')
-    <h1>Elenco Studenti</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Elenco Studenti</h1>
+        <a class="btn btn-primary" href="{{ route("studenti.create") }}">Aggiungi Studente</a>
+    </div>
     <table class="table">
         <thead>
             <tr>
