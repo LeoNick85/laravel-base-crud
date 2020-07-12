@@ -25,7 +25,8 @@
                     <td>{{ $student->last_name }}</td>
                     <td>{{ $student->email }}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ route("studenti.show", ["studenti" => $student->id]) }}">Scheda studente</a>
+                        <a class="btn btn-info" href="{{ route("studenti.show", ["studenti" => $student->id]) }}">Dettagli</a>
+                        <a class="btn btn-warning" href="{{ route("studenti.edit", ["studenti" => $student->id]) }}">Modifica</a>
                     </td>
                 </tr>
             @endforeach

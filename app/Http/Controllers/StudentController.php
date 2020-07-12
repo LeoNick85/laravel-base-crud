@@ -68,7 +68,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view("students.edit", compact("student"));
     }
 
     /**
@@ -80,7 +81,11 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dati = $request->all();
+        $student = Student::find($id);
+        $student->update($dati);
+
+        return redirect()->route("studenti.index");
     }
 
     /**
