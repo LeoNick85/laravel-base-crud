@@ -7,6 +7,15 @@
         <div class="row">
             <div class="col-12">
                 <h1>Modifica dati studente</h1>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form class="" action=" {{ route("studenti.update", ["studenti" => $student->id]) }} " method="post">
                     @method("PUT")
                     @csrf

@@ -40,6 +40,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "first_name" => "required|max:20",
+            "last_name" => "required|max:20",
+            "email" => "required|max:30",
+            "student_id" => "required|max:6"
+        ]);
         $dati = $request->all();
         $nuovo_studente = new Student();
         $nuovo_studente->fill($dati);
@@ -81,6 +87,12 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            "first_name" => "required|max:20",
+            "last_name" => "required|max:20",
+            "email" => "required|max:30",
+            "student_id" => "required|max:6"
+        ]);
         $dati = $request->all();
         $student = Student::find($id);
         $student->update($dati);
