@@ -27,6 +27,11 @@
                     <td>
                         <a class="btn btn-info" href="{{ route("studenti.show", ["studenti" => $student->id]) }}">Dettagli</a>
                         <a class="btn btn-warning" href="{{ route("studenti.edit", ["studenti" => $student->id]) }}">Modifica</a>
+                        <form class="" action="{{ route("studenti.destroy", ["studenti" => $student->id]) }}" method="post">
+                            @method("DELETE")
+                            @csrf
+                            <input type="submit" name="" class="btn btn-danger" value="Elimina">
+                        </form>
                     </td>
                 </tr>
             @endforeach
